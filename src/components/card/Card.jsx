@@ -1,23 +1,38 @@
 import React from 'react'
-import CardStyle from "./card.module.css"
+import Button from '../button/Button';
+import cartStyle from './card.module.css'
+
+import { FaChevronLeft ,
+  FaChevronRight
+
+} from 'react-icons/fa';
 
 const Card = ({data}) => {
-    
+    // console.log(data)
+    // const {image,id,name,job,text}=data
+   
   return (
     <div>
-        {data.map((item) => {
-            const {id,image,name,job,text} = item;
-            return(
-                <div key={id} className={CardStyle.container} >
-                      <img src={image} alt="" />
-                      <h2>{name} </h2>
-                      <h3>{job} </h3>
-                       <p>{text} </p>
-                </div>
-      
-            )
-        })}
-       
+         {data.map((item)=>{
+            const {name,id,text,image,job}=item;
+           return(
+            <div className={cartStyle.container} key={id}> 
+            <img src={image} alt="" />
+            <h2>{name}</h2>
+            <h3>{job}</h3>
+            <p>{text}</p>
+            <span><FaChevronLeft /> </span>
+            <span><FaChevronRight /></span>
+            <Button/>
+            </div>
+           
+           )
+         
+
+         })}
+     
+        
+
     </div>
   )
 }
