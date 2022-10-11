@@ -6,7 +6,7 @@ import data from './helper/data'
 
 
 function App() {
-  // console.log(data);
+  
   return(
     <>
 
